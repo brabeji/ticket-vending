@@ -6,57 +6,62 @@ export default class TicketList extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			items: [
-				{
-					name: 'jedna',
-					price: 12
-				},
-				{
-					name: 'dva',
-					price: 24
-				},
-				{
-					name: 'tri',
-					price: 36
-				},
-				{
-					name: 'jedna',
-					price: 1000
-				},
-			]
-		};
-		_.each(this.state.items, function (item) {
-			item.quantity = 0;
-		});
+			quantities: []
+		}
 	}
 
+	//componentDidMount() {
+	//	var items = this.props.items;
+	//	_.each(items, function (item) {
+	//		item.quantity = 0;
+	//	});
+	//	this.setState({items});
+	//}
+
 	handleAdd(item, event) {
-		var items = this.state.items.slice();
-		var item = _.find(items, item);
-		item.quantity++;
-		this.setState({items})
+		var quantities = this.state.quantities.slice();
+		var editedItem = _.find(this.state.quantities, item);
+		if (!editedItem) {
+			editedItem = _.cloneDeep(item);
+			quantities.push(editedItem);
+		}
+		if (!editedItem.quantity) {
+			editedItem.quantity = 0;
+		}
+		editedItem.quantity++;
+		this.setState({quantities});
 	}
 
 	handleRemove(item, event) {
-		var items = this.state.items.slice();
-		var item = _.find(items, item);
-		if (item.quantity > 0) {
-			item.quantity--;
-			this.setState({items})
+		var quantities = this.state.quantities.slice();
+		var editedItem = _.find(quantities, item);
+		if (editedItem.quantity > 0) {
+			editedItem.quantity--;
+			this.setState({quantities});
+		}
+	}
+
+	getQuantity(item) {
+		var qitem = _.find(this.state.quantities, item);
+		if (qitem) {
+			return qitem.quantity;
+		} else {
+			return 0;
 		}
 	}
 
 	renderRemoveBtn(item) {
-		return (item.quantity) ? <button className="TicketList-removeButton" onClick={this.handleRemove.bind(this, item)}>-</button> : null;
+		return (this.getQuantity(item)) ?
+			<button className="TicketList-removeButton" onClick={this.handleRemove.bind(this, item)}>-</button> : null;
 	}
 
 	renderItems() {
-		return this.state.items.map((i)=> {
+		return this.props.items.map((i, key)=> {
 			return (
-				<div className="TicketList-item">
+				<div className="TicketList-item" key={key}>
 					<button className="TicketList-addButton" onClick={this.handleAdd.bind(this, i)}>
 						{i.name}
-						- {i.price} ({i.quantity})
+						- {i.price} ({this.getQuantity(i)})
 					</button>
 					{this.renderRemoveBtn(i)}
 				</div>
@@ -73,3 +78,24 @@ export default class TicketList extends React.Component {
 	}
 
 }
+
+TicketList.defaultProps = {
+	items: [
+		{
+			name: 'jedna',
+			price: 12
+		},
+		{
+			name: 'dva',
+			price: 24
+		},
+		{
+			name: 'tri',
+			price: 36
+		},
+		{
+			name: 'jedna',
+			price: 1000
+		}
+	]
+};

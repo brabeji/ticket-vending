@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
 import { Link } from 'react-router';
-import Btn from 'components/Btn/index';
-import Cart from 'components/Cart/index';
-import TicketList from 'components/TicketList/index';
+import {Btn} from '@stackscz/reactor';
+import Cart from 'components/Cart';
+import TicketList from 'components/TicketList';
 
 export default class HomeScreen extends React.Component {
 
@@ -13,28 +13,46 @@ export default class HomeScreen extends React.Component {
 				<div className="Screen-heading">
 					<h1>Rychlá volba - Vyberte jízdenku</h1>
 				</div>
-				<div className="row">
-					<div className="col-xs-6">
-						<TicketList />
-					</div>
-					<div className="col-xs-6">
-						<TicketList />
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-xs-6">
-						<Cart />
+				<br />
+				<div className="container-fluid">
+					<div className="row">
+						<div className="col-xs-6">
+							<TicketList />
+						</div>
+						<div className="col-xs-6">
+							<TicketList />
+						</div>
 					</div>
 				</div>
-				<ul>
+				<br />
+				<div className="container-fluid">
+					<div className="row">
+						<div className="col-xs-12 text-center">
+							<Cart />
+						</div>
+					</div>
+				</div>
+				<ul className="HomeScreen-links">
 					<li>
-						<Link to="/tickets"><Btn>Jízdenky</Btn></Link>
+						<Link to="/tickets">
+							<Btn className="Btn Btn--xl">
+								Jízdenky
+							</Btn>
+						</Link>
 					</li>
 					<li>
-						<Link to="/timesheet"><Btn>Vyhledání spoje</Btn></Link>
+						<Link to="/timesheet">
+							<Btn className="Btn Btn--xl">
+								Vyhledání spoje
+							</Btn>
+						</Link>
 					</li>
 					<li>
-						<Link to="/tickets"><Btn>Opencard</Btn></Link>
+						<Link to="/card">
+							<Btn className="Btn Btn--xl">
+								Opencard
+							</Btn>
+						</Link>
 					</li>
 				</ul>
 			</div>

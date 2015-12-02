@@ -2,8 +2,12 @@ import React from 'react';
 import { Router, Route, IndexRoute} from 'react-router';
 
 import App from 'containers/App';
-import HomeScreen from 'components/HomeScreen/index';
-import TicketsScreen from 'components/TicketsScreen/index';
+import HomeScreen from 'components/HomeScreen';
+import TicketsScreen from 'components/TicketsScreen';
+import RouteScreen from 'components/RouteScreen';
+import HelpScreen from 'components/HelpScreen';
+import CardDetailsScreen from 'components/CardDetailsScreen';
+import PaymentScreen from 'components/PaymentScreen';
 
 
 export default class Machine extends React.Component {
@@ -16,13 +20,22 @@ export default class Machine extends React.Component {
 						<Route path="/" component={App}>
 							<IndexRoute component={HomeScreen}/>
 							<Route path="/tickets" component={TicketsScreen}/>
-							<Route path="/inbox" component={TicketsScreen}/>
-							<Route path="/help" component={TicketsScreen}/>
+							<Route path="/timesheet" component={RouteScreen}/>
+							<Route path="/help" component={HelpScreen}/>
+							<Route path="/card" component={CardDetailsScreen}/>
+							<Route path="/payment" component={PaymentScreen}/>
 						</Route>
 					</Router>
 				</div>
 				<div className="Machine-hwPanel">
-					panel
+					<div className="Machine-coinsSlot">
+						<div></div>
+						<span></span>
+						<i></i>
+					</div>
+					<div className="Machine-paymentCardSlot">
+						<div></div>
+					</div>
 				</div>
 			</div>
 		);
