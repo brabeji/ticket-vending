@@ -32,27 +32,21 @@ export default class HomeScreen extends React.Component {
 						</div>
 					</div>
 				</div>
-				<ul className="HomeScreen-links">
-					<li>
-						<Link to="/tickets">
-							<Btn className="Btn Btn--xl">
-								Jízdenky
-							</Btn>
-						</Link>
+				<ul className="HomeScreen-links row">
+					<li className="col-xs-12 col-md-4">
+						<Btn to="/tickets" className="Btn Btn--xl Btn--block">
+							Jízdenky
+						</Btn>
 					</li>
-					<li>
-						<Link to="/timesheet">
-							<Btn className="Btn Btn--xl">
-								Vyhledání spoje
-							</Btn>
-						</Link>
+					<li className="col-xs-12 col-md-4">
+						<Btn className="Btn Btn--xl Btn--block Btn--multiline" to="/timesheet">
+							Vyhledání spoje
+						</Btn>
 					</li>
-					<li>
-						<Link to="/card">
-							<Btn className="Btn Btn--xl">
-								Opencard
-							</Btn>
-						</Link>
+					<li className="col-xs-12 col-md-4">
+						<Btn className="Btn Btn--xl Btn--block" to="/card">
+							Opencard
+						</Btn>
 					</li>
 				</ul>
 			</div>

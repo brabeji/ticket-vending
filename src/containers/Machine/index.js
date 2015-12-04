@@ -7,6 +7,7 @@ import TicketsScreen from 'components/TicketsScreen';
 import RouteScreen from 'components/RouteScreen';
 import HelpScreen from 'components/HelpScreen';
 import CardDetailsScreen from 'components/CardDetailsScreen';
+import CardOrderScreen from 'components/CardOrderScreen';
 import PaymentScreen from 'components/PaymentScreen';
 
 
@@ -23,6 +24,7 @@ export default class Machine extends React.Component {
 							<Route path="/timesheet" component={RouteScreen}/>
 							<Route path="/help" component={HelpScreen}/>
 							<Route path="/card" component={CardDetailsScreen}/>
+							<Route path="/card-order" component={CardOrderScreen}/>
 							<Route path="/payment" component={PaymentScreen}/>
 						</Route>
 					</Router>

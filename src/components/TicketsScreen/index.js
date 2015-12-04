@@ -21,7 +21,8 @@ export default class TicketsScreen extends React.Component {
 	getSwitchClass(category) {
 		return classNames({
 			'Btn': true,
-			'btn-block': true,
+			'Btn--md': true,
+			'Btn--block': true,
 			'Btn--active': this.state.category == category
 		});
 	}
@@ -119,7 +120,7 @@ export default class TicketsScreen extends React.Component {
 				</div>
 				<div className="Screen-content">
 					<div className="row text-center">
-						<div className="col-xs-6 col-xs-offset-3">
+						<div className="col-xs-10 col-xs-offset-1">
 							<div className="row text-center">
 								<div className="col-xs-6">
 									<Btn className={this.getSwitchClass(0)} onClick={this.setCategory.bind(this,0)}>
@@ -143,7 +144,7 @@ export default class TicketsScreen extends React.Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-xs-6">
+						<div className="col-xs-12">
 							<Cart />
 						</div>
 					</div>

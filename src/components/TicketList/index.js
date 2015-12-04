@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import { Btn } from '@stackscz/reactor';
 
 export default class TicketList extends React.Component {
 
@@ -52,18 +53,31 @@ export default class TicketList extends React.Component {
 
 	renderRemoveBtn(item) {
 		return (this.getQuantity(item)) ?
-			<button className="TicketList-removeButton" onClick={this.handleRemove.bind(this, item)}>-</button> : null;
+			<Btn className="TicketList-removeButton" onClick={this.handleRemove.bind(this, item)}>-</Btn> : null;
 	}
 
 	renderItems() {
 		return this.props.items.map((i, key)=> {
 			return (
 				<div className="TicketList-item" key={key}>
-					<button className="TicketList-addButton" onClick={this.handleAdd.bind(this, i)}>
-						{i.name}
-						- {i.price} ({this.getQuantity(i)})
-					</button>
-					{this.renderRemoveBtn(i)}
+					<div className="row">
+						<div className="col-xs-8">
+							<Btn className="TicketList-addButton" onClick={this.handleAdd.bind(this, i)}>
+								{i.name}
+								<div className="TicketList-price">
+									{i.price}
+								</div>
+							</Btn>
+						</div>
+						<div className="col-xs-1">
+							<div className="TicketList-quantity">
+								{this.getQuantity(i)}
+							</div>
+						</div>
+						<div className="col-xs-3">
+							{this.renderRemoveBtn(i)}
+						</div>
+					</div>
 				</div>
 			);
 		});

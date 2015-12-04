@@ -25,16 +25,9 @@ export default class App extends Component {
 				<div className="App-header">
 					<div className="row">
 						<div className="col-xs-8">
-							<Link activeClassName="Link--active" to="/">
-								<Btn>Hlavní stránka</Btn>
-							</Link>
-							<Link activeClassName="Link--active" to="/">
-								<Btn>Zpět</Btn>
-							</Link>
-							<Link activeClassName="Link--active" to="/help">
-								<Btn>Nápověda</Btn>
-							</Link>
-							<a onClick={this.switchModal.bind(this)}><Btn>MODAL</Btn></a>
+							<Btn modifiers="lg" activeClassName="Link--active" to="/">Hlavní stránka</Btn>
+							<Btn modifiers="lg" activeClassName="Link--active" to="/">Zpět</Btn>
+							<Btn modifiers="lg" activeClassName="Link--active" to="/help">Nápověda</Btn>
 						</div>
 						<div className="col-xs-4">
 							<div className="App-languageSelector">
@@ -68,3 +61,6 @@ App.defaultProps = {
 		}
 	]
 };
+
+
+//<Btn modifiers="lg" onClick={this.switchModal.bind(this)}>MODAL</Btn>

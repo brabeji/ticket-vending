@@ -13,7 +13,7 @@ export default class HelpScreen extends React.Component {
 				<div className="Screen-heading">
 					<h1>Napoveda</h1>
 				</div>
-				help
+				<img className="Screen-bgImg" src="/help.png" alt="" />
 			</div>
 		);
 	}
