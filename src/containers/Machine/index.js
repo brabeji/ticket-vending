@@ -5,6 +5,7 @@ import App from 'containers/App';
 import HomeScreen from 'components/HomeScreen';
 import TicketsScreen from 'components/TicketsScreen';
 import RouteScreen from 'components/RouteScreen';
+import RouteResultsScreen from 'components/RouteResultsScreen';
 import HelpScreen from 'components/HelpScreen';
 import CardDetailsScreen from 'components/CardDetailsScreen';
 import CardOrderScreen from 'components/CardOrderScreen';
@@ -22,6 +23,7 @@ export default class Machine extends React.Component {
 							<IndexRoute component={HomeScreen}/>
 							<Route path="/tickets" component={TicketsScreen}/>
 							<Route path="/timesheet" component={RouteScreen}/>
+							<Route path="/timesheet/results" component={RouteResultsScreen}/>
 							<Route path="/help" component={HelpScreen}/>
 							<Route path="/card" component={CardDetailsScreen}/>
 							<Route path="/card-order" component={CardOrderScreen}/>
