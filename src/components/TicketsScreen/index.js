@@ -32,40 +32,76 @@ export default class TicketsScreen extends React.Component {
 			if (!secondHalf) {
 				return [
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 1',
 						price: 12
 					},
 					{
-						name: 'ydva',
+						name: 'Jízdenka 2',
 						price: 24
 					},
 					{
-						name: 'ytri',
+						name: 'Jízdenka 3',
 						price: 36
 					},
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 4',
 						price: 1000
-					}
+					},
+					{
+						name: 'Jízdenka 5',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 6',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 7',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 8',
+						price: 1000
+					},
 				];
 			} else {
 				return [
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 9',
 						price: 12
 					},
 					{
-						name: 'ydva',
+						name: 'Jízdenka 10',
 						price: 24
 					},
 					{
-						name: 'ytri',
+						name: 'Jízdenka 11',
 						price: 36
 					},
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 12',
 						price: 1000
-					}
+					},
+					{
+						name: 'Jízdenka 13',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 14',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 15',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 16',
+						price: 1000
+					},
+					{
+						name: 'Jízdenka 17',
+						price: 1000
+					},
 				];
 			}
 
@@ -73,38 +109,38 @@ export default class TicketsScreen extends React.Component {
 			if (!secondHalf) {
 				return [
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 18',
 						price: 12
 					},
 					{
-						name: 'xdva',
+						name: 'Jízdenka 19',
 						price: 24
 					},
 					{
-						name: 'xtri',
+						name: 'Jízdenka 20',
 						price: 36
 					},
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 21',
 						price: 1000
 					}
 				];
 			} else {
 				return [
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 22',
 						price: 12
 					},
 					{
-						name: 'xdva',
+						name: 'Jízdenka 23',
 						price: 24
 					},
 					{
-						name: 'xtri',
+						name: 'Jízdenka 24',
 						price: 36
 					},
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 25',
 						price: 1000
 					}
 				];
@@ -138,12 +174,14 @@ export default class TicketsScreen extends React.Component {
 							</div>
 						</div>
 						<br />
-						<div className="row">
-							<div className="col-xs-6">
-								<TicketList items={this.getItemsForCategory()}/>
-							</div>
-							<div className="col-xs-6">
-								<TicketList items={this.getItemsForCategory(true)}/>
+						<div className="scrollpane">
+							<div className="row">
+								<div className="col-xs-6">
+									<TicketList items={this.getItemsForCategory()}/>
+								</div>
+								<div className="col-xs-6">
+									<TicketList items={this.getItemsForCategory(true)}/>
+								</div>
 							</div>
 						</div>
 						<br />

@@ -19,7 +19,7 @@ export default class Machine extends React.Component {
 				this.setState({modalOpen: false});
 				this.context.history.pushState('/');
 			}
-		}, 4000);
+		}, 2000);
 	}
 
 	render() {
@@ -30,10 +30,12 @@ export default class Machine extends React.Component {
 				</div>
 				<div className="Machine-hwPanel">
 					<Btn className="Machine-coinsSlot" onClick={this.switchPaymentSuccess.bind(this)}>
+						<span className="description">Platba hotovostí</span>
 						<div></div>
 						<span className="hint">Kliknete pro zaplaceni</span>
 					</Btn>
 					<Btn className="Machine-paymentCardSlot" onClick={this.switchPaymentSuccess.bind(this)}>
+						<span className="description">Platba kartou</span>
 						<div></div>
 						<span className="hint">Kliknete pro zaplaceni</span>
 					</Btn>

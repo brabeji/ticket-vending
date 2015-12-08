@@ -25,7 +25,9 @@ export default class RouteResultsScreen extends React.Component {
 		return (
 			<div className="Screen">
 				<div className="Screen-heading">
-					<h1>Vyhledani spojeni: výsledky</h1>
+					<h1>
+						Vyhledání spojení: výsledky
+					</h1>
 				</div>
 				<div className="Screen-content">
 

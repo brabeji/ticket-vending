@@ -22,7 +22,9 @@ export default class CardDetailsScreen extends React.Component {
 		return (
 			<div className="Screen">
 				<div className="Screen-heading">
-					<h1>Nahrane casove jizdenky</h1>
+					<h1>
+						Aktivní časové jízdenky
+					</h1>
 				</div>
 				<div className="Screen-content">
 					{!this.state.modalOpen ? (
@@ -39,21 +41,18 @@ export default class CardDetailsScreen extends React.Component {
 										</thead>
 										<tbody>
 											<tr>
-												<td>ctvrtletni</td>
+												<td>čtvrtletní/90denní - dospělý</td>
 												<td>25.11.2015</td>
-												<td>
-													<Btn to="/card-order">
-														Prodlouzit kupon
-													</Btn>
-												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
 								<div className="col-xs-12">
-									<Btn modifiers="lg" to="/card-order">
-										Prodlouzit kupon
-									</Btn>
+									<div className="text-center">
+										<Btn modifiers="lg" to="/card-order">
+											Zakoupit kupón
+										</Btn>
+									</div>
 								</div>
 							</div>
 						</div>

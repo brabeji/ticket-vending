@@ -29,7 +29,9 @@ export default class TicketList extends React.Component {
 		if (!editedItem.quantity) {
 			editedItem.quantity = 0;
 		}
-		editedItem.quantity++;
+		if (editedItem.quantity < 9) {
+			editedItem.quantity++;
+		}
 		this.setState({quantities});
 	}
 

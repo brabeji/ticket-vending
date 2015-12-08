@@ -57,38 +57,38 @@ export default class CardOrderScreen extends React.Component {
 			if (!secondHalf) {
 				return [
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 1',
 						price: 12
 					},
 					{
-						name: 'ydva',
+						name: 'Jízdenka 2',
 						price: 24
 					},
 					{
-						name: 'ytri',
+						name: 'Jízdenka 3',
 						price: 36
 					},
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 4',
 						price: 1000
 					}
 				];
 			} else {
 				return [
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 5',
 						price: 12
 					},
 					{
-						name: 'ydva',
+						name: 'Jízdenka 6',
 						price: 24
 					},
 					{
-						name: 'ytri',
+						name: 'Jízdenka 7',
 						price: 36
 					},
 					{
-						name: 'yjedna',
+						name: 'Jízdenka 8',
 						price: 1000
 					}
 				];
@@ -98,38 +98,38 @@ export default class CardOrderScreen extends React.Component {
 			if (!secondHalf) {
 				return [
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 9',
 						price: 12
 					},
 					{
-						name: 'xdva',
+						name: 'Jízdenka 10',
 						price: 24
 					},
 					{
-						name: 'xtri',
+						name: 'Jízdenka 11',
 						price: 36
 					},
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 12',
 						price: 1000
 					}
 				];
 			} else {
 				return [
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 13',
 						price: 12
 					},
 					{
-						name: 'xdva',
+						name: 'Jízdenka 14',
 						price: 24
 					},
 					{
-						name: 'xtri',
+						name: 'Jízdenka 15',
 						price: 36
 					},
 					{
-						name: 'xjedna',
+						name: 'Jízdenka 16',
 						price: 1000
 					}
 				];

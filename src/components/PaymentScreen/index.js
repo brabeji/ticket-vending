@@ -78,19 +78,24 @@ export default class PaymentScreen extends React.Component {
 PaymentScreen.defaultProps = {
 	items: [
 		{
-			title: 'foo',
+			title: 'čtvrtletní/90denní - dospělý',
 			quantity: 2,
 			price: 120
 		},
 		{
-			title: 'foo 2',
+			title: 'základní/90denní - dospělý',
 			quantity: 3,
 			price: 160
 		},
 		{
-			title: 'foo 3',
+			title: 'základní/90denní - zvýhodněná',
 			quantity: 1,
 			price: 12
+		},
+		{
+			title: 'zavazadlo',
+			quantity: 4,
+			price: 64
 		},
 	]
 };
