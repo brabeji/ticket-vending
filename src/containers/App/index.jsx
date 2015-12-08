@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import ReactModal from 'react-modal';
 import {Btn, Modal, LanguageSelector} from '@stackscz/reactor';
+import BackBtn from 'components/BackBtn';
 
 //Modal.setAppElement('.Machine-screen');
 
@@ -25,9 +26,9 @@ export default class App extends Component {
 				<div className="App-header">
 					<div className="row">
 						<div className="col-xs-8">
-							<Btn modifiers="lg" activeClassName="Link--active" to="/">Hlavní stránka</Btn>
-							<Btn modifiers="lg" activeClassName="Link--active" to="/">Zpět</Btn>
-							<Btn modifiers="lg" activeClassName="Link--active" to="/help">Nápověda</Btn>
+							<Btn modifiers="lg" to="/">Hlavní stránka</Btn>
+							<BackBtn modifiers="lg" to="/">Zpět</BackBtn>
+							<Btn modifiers="lg" to="/help">Nápověda</Btn>
 						</div>
 						<div className="col-xs-4">
 							<div className="App-languageSelector">

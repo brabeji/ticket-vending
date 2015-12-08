@@ -60,7 +60,7 @@ export default class CardDetailsScreen extends React.Component {
 					) : null}
 					{this.state.modalOpen ? (
 						<Modal onClose={this.switchModal.bind(this)}>
-							<Btn onClick={this.switchModal.bind(this)}>nacist kartu</Btn>
+							<Btn modifiers="lg block" onClick={this.switchModal.bind(this)}>nacist kartu</Btn>
 						</Modal>
 					) : null}
 

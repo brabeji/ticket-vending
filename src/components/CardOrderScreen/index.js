@@ -5,6 +5,10 @@ import { Link } from 'react-router';
 import { Btn, Modal } from '@stackscz/reactor';
 import Cart from 'components/Cart';
 import CardList from 'components/CardList';
+import DatePicker from 'react-date-picker';
+import 'moment/locale/cs';
+import 'react-date-picker/index.css';
+import moment from 'moment';
 
 export default class CardOrderScreen extends React.Component {
 
@@ -13,6 +17,7 @@ export default class CardOrderScreen extends React.Component {
 		this.state = {
 			category: 0,
 			modalOpen: false,
+			date: moment()
 		}
 	}
 
@@ -31,6 +36,18 @@ export default class CardOrderScreen extends React.Component {
 
 	switchModal() {
 		this.setState({modalOpen: !this.state.modalOpen});
+	}
+
+	pickDate(date, e) {
+		this.setState({date: moment(date)});
+		this.switchModal();
+	}
+
+	pickToday() {
+		this.setState({date: moment()});
+	}
+	pickTomorrow() {
+		this.setState({date: moment()});
 	}
 
 	getItemsForCategory(secondHalf) {
@@ -159,12 +176,12 @@ export default class CardOrderScreen extends React.Component {
 							</div>
 							<div className="col-xs-4 text-center">
 								<div className="Foo-bar" onClick={this.switchModal.bind(this)}>
-									12.10.2015
+									{this.state.date.format('DD.MM.YYYY')}
 								</div>
 							</div>
 							<div className="col-xs-4 text-center">
-								<Btn>Dnes</Btn>
-								<Btn>Zítra</Btn>
+								<Btn modifiers="md" onClick={this.pickToday.bind(this)}>Dnes</Btn>
+								<Btn modifiers="md" onClick={this.pickTomorrow.bind(this)}>Zítra</Btn>
 							</div>
 						</div>
 						<div className="row">
@@ -178,7 +195,9 @@ export default class CardOrderScreen extends React.Component {
 
 					{this.state.modalOpen ? (
 							<Modal onClose={this.switchModal.bind(this)}>
-								<Btn onClick={this.switchModal.bind(this)}>hotovo</Btn>
+
+								<DatePicker locale="cs" onChange={this.pickDate.bind(this)} />
+
 							</Modal>
 					) : null}
 

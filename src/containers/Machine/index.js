@@ -1,15 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute} from 'react-router';
-
-import App from 'containers/App';
-import HomeScreen from 'components/HomeScreen';
-import TicketsScreen from 'components/TicketsScreen';
-import RouteScreen from 'components/RouteScreen';
-import RouteResultsScreen from 'components/RouteResultsScreen';
-import HelpScreen from 'components/HelpScreen';
-import CardDetailsScreen from 'components/CardDetailsScreen';
-import CardOrderScreen from 'components/CardOrderScreen';
-import PaymentScreen from 'components/PaymentScreen';
+import { Link, Router, Route, IndexRoute} from 'react-router';
 
 
 export default class Machine extends React.Component {
@@ -18,28 +8,21 @@ export default class Machine extends React.Component {
 		return (
 			<div className="Machine">
 				<div className="Machine-screen">
-					<Router>
-						<Route path="/" component={App}>
-							<IndexRoute component={HomeScreen}/>
-							<Route path="/tickets" component={TicketsScreen}/>
-							<Route path="/timesheet" component={RouteScreen}/>
-							<Route path="/timesheet/results" component={RouteResultsScreen}/>
-							<Route path="/help" component={HelpScreen}/>
-							<Route path="/card" component={CardDetailsScreen}/>
-							<Route path="/card-order" component={CardOrderScreen}/>
-							<Route path="/payment" component={PaymentScreen}/>
-						</Route>
-					</Router>
+					{this.props.children}
 				</div>
 				<div className="Machine-hwPanel">
-					<div className="Machine-coinsSlot">
-						<div></div>
-						<span></span>
-						<i></i>
-					</div>
-					<div className="Machine-paymentCardSlot">
-						<div></div>
-					</div>
+					<Link to="/">
+						<div className="Machine-coinsSlot">
+							<div></div>
+							<span className="hint">Kliknete pro zaplaceni</span>
+						</div>
+					</Link>
+					<Link to="/">
+						<div className="Machine-paymentCardSlot">
+							<div></div>
+							<span className="hint">Kliknete pro zaplaceni</span>
+						</div>
+					</Link>
 				</div>
 			</div>
 		);

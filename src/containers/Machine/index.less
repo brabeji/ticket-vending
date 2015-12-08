@@ -21,9 +21,11 @@
     border-left: 0;
   }
   &-coinsSlot {
+    position: relative;
     width: 80%;
     margin: 0 auto;
-    border: 1px solid;
+    border: 1px solid #000;
+    color: #000;
     height: 30%;
     margin-top: 100px;
     div {
@@ -35,9 +37,11 @@
     }
   }
   &-paymentCardSlot {
+    position: relative;
     width: 80%;
     margin: 0 auto;
-    border: 1px solid;
+    border: 1px solid #000;
+    color: #000;
     height: 100px;
     margin-top: 100px;
 
@@ -48,5 +52,13 @@
       margin: 0 auto;
       margin-top: 45px;
     }
+  }
+  .hint {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
   }
 }
