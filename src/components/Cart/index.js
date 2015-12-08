@@ -12,7 +12,7 @@ export default class Cart extends React.Component {
 				<div className="row">
 					<div className="col-xs-5 col-xs-offset-1">
 						<span className="Cart-amount">
-						Celkem: 2742 Kč
+						Celkem: XXX Kč
 						</span>
 					</div>
 					<div className="col-xs-5">

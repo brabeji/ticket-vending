@@ -25,12 +25,12 @@ export default class App extends Component {
 			<div className="App">
 				<div className="App-header">
 					<div className="row">
-						<div className="col-xs-8">
+						<div className="col-xs-7">
 							<Btn modifiers="lg" to="/">Hlavní stránka</Btn>
 							<BackBtn modifiers="lg" to="/">Zpět</BackBtn>
 							<Btn modifiers="lg" to="/help">Nápověda</Btn>
 						</div>
-						<div className="col-xs-4">
+						<div className="col-xs-5">
 							<div className="App-languageSelector">
 								<LanguageSelector languages={this.props.languages}/>
 							</div>
@@ -55,10 +55,13 @@ export default class App extends Component {
 App.defaultProps = {
 	languages: [
 		{
-			flag: 'gb'
+			flag: 'cz'
 		},
 		{
-			flag: 'cz'
+			flag: 'de'
+		},
+		{
+			flag: 'gb'
 		}
 	]
 };

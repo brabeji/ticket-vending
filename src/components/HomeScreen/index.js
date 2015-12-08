@@ -17,10 +17,25 @@ export default class HomeScreen extends React.Component {
 				<div className="container-fluid">
 					<div className="row">
 						<div className="col-xs-6">
+							<h2 className="text-center">Základní</h2>
 							<TicketList />
 						</div>
 						<div className="col-xs-6">
-							<TicketList />
+							<h2 className="text-center">Zvýhodněná</h2>
+							<TicketList items={[
+		{
+			name: 'PRAHA nebo 3 pásma / 30 min',
+			price: 12
+		},
+		{
+			name: 'PRAHA nebo 4 pásma / 30 min',
+			price: 16
+		},
+		{
+			name: '24 hodin PRAHA',
+			price: 55
+		},
+	]} />
 						</div>
 					</div>
 				</div>

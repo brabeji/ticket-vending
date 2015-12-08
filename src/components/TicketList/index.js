@@ -61,7 +61,7 @@ export default class TicketList extends React.Component {
 			return (
 				<div className="TicketList-item" key={key}>
 					<div className="row">
-						<div className="col-xs-8">
+						<div className="col-xs-9">
 							<Btn className="TicketList-addButton" onClick={this.handleAdd.bind(this, i)}>
 								{i.name}
 								<div className="TicketList-price">
@@ -74,7 +74,7 @@ export default class TicketList extends React.Component {
 								{this.getQuantity(i)}
 							</div>
 						</div>
-						<div className="col-xs-3">
+						<div className="col-xs-2">
 							{this.renderRemoveBtn(i)}
 						</div>
 					</div>
@@ -96,20 +96,16 @@ export default class TicketList extends React.Component {
 TicketList.defaultProps = {
 	items: [
 		{
-			name: 'jedna',
-			price: 12
-		},
-		{
-			name: 'dva',
+			name: 'PRAHA nebo 3 pásma / 30 min',
 			price: 24
 		},
 		{
-			name: 'tri',
-			price: 36
+			name: 'PRAHA nebo 4 pásma / 30 min',
+			price: 32
 		},
 		{
-			name: 'jedna',
-			price: 1000
-		}
+			name: '24 hodin PRAHA',
+			price: 110
+		},
 	]
 };

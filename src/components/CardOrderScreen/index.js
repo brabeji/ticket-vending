@@ -39,15 +39,17 @@ export default class CardOrderScreen extends React.Component {
 	}
 
 	pickDate(date, e) {
-		this.setState({date: moment(date)});
-		this.switchModal();
+		this.setState({
+			date: moment(date),
+			modalOpen: false
+		});
 	}
 
 	pickToday() {
 		this.setState({date: moment()});
 	}
 	pickTomorrow() {
-		this.setState({date: moment()});
+		this.setState({date: moment().add(1, 'day')});
 	}
 
 	getItemsForCategory(secondHalf) {
@@ -143,7 +145,7 @@ export default class CardOrderScreen extends React.Component {
 				</div>
 				<div className="Screen-content">
 					<div className="container-fluid">
-
+						<br />
 						<div className="row text-center">
 							<div className="col-xs-10 col-xs-offset-1">
 								<div className="row text-center">
@@ -170,20 +172,26 @@ export default class CardOrderScreen extends React.Component {
 								<CardList items={this.getItemsForCategory(true)}/>
 							</div>
 						</div>
-						<div className="row">
-							<div className="col-xs-4 text-center">
-								Platnost od:
-							</div>
-							<div className="col-xs-4 text-center">
-								<div className="Foo-bar" onClick={this.switchModal.bind(this)}>
-									{this.state.date.format('DD.MM.YYYY')}
+						<br />
+						<div className="Screen-dateSelector">
+							<div className="row">
+								<div className="col-xs-4 text-center">
+									<div className="Screen-dateSelectorLabel">
+										Platnost od:
+									</div>
+								</div>
+								<div className="col-xs-4 text-center">
+									<div className="Screen-dateSelectorDate" onClick={this.switchModal.bind(this)}>
+										{this.state.date.format('DD.MM.YYYY')}
+									</div>
+								</div>
+								<div className="col-xs-4 text-center">
+									<Btn modifiers="md" onClick={this.pickToday.bind(this)}>Dnes</Btn>
+									<Btn modifiers="md" onClick={this.pickTomorrow.bind(this)}>Zítra</Btn>
 								</div>
 							</div>
-							<div className="col-xs-4 text-center">
-								<Btn modifiers="md" onClick={this.pickToday.bind(this)}>Dnes</Btn>
-								<Btn modifiers="md" onClick={this.pickTomorrow.bind(this)}>Zítra</Btn>
-							</div>
 						</div>
+						<br />
 						<div className="row">
 							<div className="col-xs-12 text-center">
 								<Cart />
@@ -194,7 +202,7 @@ export default class CardOrderScreen extends React.Component {
 
 
 					{this.state.modalOpen ? (
-							<Modal onClose={this.switchModal.bind(this)}>
+							<Modal onClose={this.switchModal.bind(this)} on="Machine-screen">
 
 								<DatePicker locale="cs" onChange={this.pickDate.bind(this)} />
 

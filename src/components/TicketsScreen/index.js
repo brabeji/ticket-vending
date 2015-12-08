@@ -119,33 +119,38 @@ export default class TicketsScreen extends React.Component {
 					<h1>Vyberte papirovou jizdenku</h1>
 				</div>
 				<div className="Screen-content">
-					<div className="row text-center">
-						<div className="col-xs-10 col-xs-offset-1">
-							<div className="row text-center">
-								<div className="col-xs-6">
-									<Btn className={this.getSwitchClass(0)} onClick={this.setCategory.bind(this,0)}>
-										Na území Prahy
-									</Btn>
-								</div>
-								<div className="col-xs-6">
-									<Btn className={this.getSwitchClass(1)} onClick={this.setCategory.bind(this,1)}>
-										Příměstská doprava
-									</Btn>
+					<div className="container-fluid">
+						<div className="row text-center">
+							<div className="col-xs-10 col-xs-offset-1">
+								<br />
+								<div className="row text-center">
+									<div className="col-xs-6">
+										<Btn className={this.getSwitchClass(0)} onClick={this.setCategory.bind(this,0)}>
+											Na území Prahy
+										</Btn>
+									</div>
+									<div className="col-xs-6">
+										<Btn className={this.getSwitchClass(1)} onClick={this.setCategory.bind(this,1)}>
+											Příměstská doprava
+										</Btn>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className="row">
-						<div className="col-xs-6">
-							<TicketList items={this.getItemsForCategory()}/>
+						<br />
+						<div className="row">
+							<div className="col-xs-6">
+								<TicketList items={this.getItemsForCategory()}/>
+							</div>
+							<div className="col-xs-6">
+								<TicketList items={this.getItemsForCategory(true)}/>
+							</div>
 						</div>
-						<div className="col-xs-6">
-							<TicketList items={this.getItemsForCategory(true)}/>
-						</div>
-					</div>
-					<div className="row">
-						<div className="col-xs-12">
-							<Cart />
+						<br />
+						<div className="row">
+							<div className="col-xs-12">
+								<Cart />
+							</div>
 						</div>
 					</div>
 				</div>

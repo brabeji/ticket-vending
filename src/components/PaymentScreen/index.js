@@ -24,7 +24,7 @@ export default class PaymentScreen extends React.Component {
 		return (
 			<div className="Screen">
 				<div className="Screen-heading">
-					<h1>Jizdenky k zaplaceni</h1>
+					<h1>Jízdenky k zaplacení</h1>
 				</div>
 				<div className="Screen-content">
 
@@ -49,17 +49,19 @@ export default class PaymentScreen extends React.Component {
 									</div>
 									<div className="col-xs-12">
 										<div className="Screen-summary">
-											Zbyva zaplatit: 680 Kč
+											Zbývá zaplatit: 680 Kč
 										</div>
 									</div>
 								</div>
 							</div>
 							<div className="col-xs-4">
-								Zaplaťte:
-								<div>
-									<div>Přiložením karty k terminálu</div>
-									<div>nebo</div>
-									<div>Vhozením mincí</div>
+								<div className="Screen-paymentHint">
+									Zaplaťte:
+									<div>
+										<div>Přiložením karty k terminálu</div>
+										<div>nebo</div>
+										<div>Vhozením mincí</div>
+									</div>
 								</div>
 							</div>
 						</div>

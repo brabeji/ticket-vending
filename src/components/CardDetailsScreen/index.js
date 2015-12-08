@@ -7,8 +7,8 @@ import TicketList from 'components/TicketList';
 
 export default class CardDetailsScreen extends React.Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			modalOpen: true
 		}
@@ -42,7 +42,7 @@ export default class CardDetailsScreen extends React.Component {
 												<td>ctvrtletni</td>
 												<td>25.11.2015</td>
 												<td>
-													<Btn>
+													<Btn to="/card-order">
 														Prodlouzit kupon
 													</Btn>
 												</td>
@@ -59,7 +59,7 @@ export default class CardDetailsScreen extends React.Component {
 						</div>
 					) : null}
 					{this.state.modalOpen ? (
-						<Modal onClose={this.switchModal.bind(this)}>
+						<Modal onClose={this.switchModal.bind(this)} on="Machine-screen">
 							<Btn modifiers="lg block" onClick={this.switchModal.bind(this)}>nacist kartu</Btn>
 						</Modal>
 					) : null}
